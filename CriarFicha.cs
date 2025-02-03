@@ -68,15 +68,16 @@ namespace testes
 
                 AdicionarTexto(content, font, 14, 40, 783, nomepersonagem);
                 AdicionarTexto(content, font, 12, 268, 780, jogador);
+                AdicionarTexto(content, font, 12, 330, 755, classe.classe);
 
                 // Adiciona os atributos do personagem ao PDF
                 string[] atributos = { "FORCA", "DESTREZA", "CONSTITUICAO", "INTELIGENCIA", "SABEDORIA", "CARISMA", "VIDA", "MANA", "DEFESA" };
-                int[] posicoesX = { 49, 106, 163, 220, 277, 334, 49, 220, 49 };
+                int[] posicoesX = { 43, 100, 157, 214, 271, 328, 43, 214, 43 };
                 int[] posicoesY = { 691, 691, 691, 691, 691, 691, 635, 636, 410 };
 
                 for (int i = 0; i < atributos.Length; i++)
                 {
-                    string valorAtributo = classe.GetAtributo(atributos[i]).ToString() ?? "N/A";
+                    string valorAtributo = classe.GetAtributo(atributos[i]).ToString("D2") ?? "N/A";
                     AdicionarTexto(content, font, 18, posicoesX[i], posicoesY[i], valorAtributo);
                 }
 

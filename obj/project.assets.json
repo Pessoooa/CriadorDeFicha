@@ -78,11 +78,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\william.pessoa\\Desktop\\teste\\CriadorDeFicha\\CriadorDeFicha\\CriadorDeFicha.csproj",
+      "projectUniqueName": "C:\\Users\\william.pessoa\\Desktop\\teste\\CriadorDeFicha\\CriadorDeFicha.csproj",
       "projectName": "CriadorDeFicha",
-      "projectPath": "C:\\Users\\william.pessoa\\Desktop\\teste\\CriadorDeFicha\\CriadorDeFicha\\CriadorDeFicha.csproj",
+      "projectPath": "C:\\Users\\william.pessoa\\Desktop\\teste\\CriadorDeFicha\\CriadorDeFicha.csproj",
       "packagesPath": "C:\\Users\\william.pessoa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\william.pessoa\\Desktop\\teste\\CriadorDeFicha\\CriadorDeFicha\\obj\\",
+      "outputPath": "C:\\Users\\william.pessoa\\Desktop\\teste\\CriadorDeFicha\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\william.pessoa\\AppData\\Roaming\\NuGet\\NuGet.Config"

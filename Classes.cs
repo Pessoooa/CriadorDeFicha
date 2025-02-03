@@ -5,6 +5,7 @@ namespace testes.Classes
 {
     public class Personagem
     {
+        public string classe { get; set; }
         private Dictionary<string, int> atributos;
 
         public Personagem()
@@ -53,6 +54,7 @@ namespace testes.Classes
             SetAtributo("VIDA", 21);
             SetAtributo("MANA", 6);
             SetAtributo("DEFESA", 17);
+            classe = "Paladino";
         }
     }
     
