@@ -21,12 +21,12 @@ namespace testes
             string escolhaclasse = Console.ReadLine()?.ToLower();
 
             var classesJson = File.ReadAllText("classes.json");
-            var classes = JsonSerializer.Deserialize<List<Personagem>>(classesJson);
+            var classes = JsonSerializer.Deserialize<List<ComponenteDeFicha>>(classesJson);
 
             if (classes is null)
                 throw new Exception("abel gayzao kkkkk");
 
-            Personagem? classe = escolhaclasse switch
+            ComponenteDeFicha? classe = escolhaclasse switch
             {
                 "1" => classes[0],
                 "2" => classes[1],
