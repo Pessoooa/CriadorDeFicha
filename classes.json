@@ -1,0 +1,30 @@
+[
+  {
+    "Nome": "Paladino",
+    "Atributos": {
+      "FORCA": 18,
+      "DESTREZA": 12,
+      "CONSTITUICAO": 10,
+      "INTELIGENCIA": 16,
+      "SABEDORIA": 12,
+      "CARISMA": 16,
+      "VIDA": 21,
+      "MANA": 6,
+      "DEFESA": 17
+    }
+  },
+  {
+    "Nome": "Guerreiro",
+    "Atributos": {
+      "FORCA": 20,
+      "DESTREZA": 8,
+      "CONSTITUICAO": 3,
+      "INTELIGENCIA": 16,
+      "SABEDORIA": 12,
+      "CARISMA": 16,
+      "VIDA": 21,
+      "MANA": 6,
+      "DEFESA": 17
+    }
+  }
+]
