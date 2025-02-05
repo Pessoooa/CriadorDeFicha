@@ -1,6 +1,6 @@
 namespace testes.Classes
 {
-    public class Personagem
+    public class ComponenteDeFicha
     {
         public string Nome { get; set; }
         public Dictionary<string, int> Atributos { get; set; }
