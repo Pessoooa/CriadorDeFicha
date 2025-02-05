@@ -1,8 +1,7 @@
-using System;
-using System.IO;
+using System.Text.Json;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using testes.Classes; 
+using testes.Classes;
 
 namespace testes
 {
@@ -15,31 +14,28 @@ namespace testes
             Console.WriteLine("Qual o caminho que você irá salvar a sua ficha?");
             var caminhoFicha = Console.ReadLine();
 
-            // Instância do personagem
-            Personagem classe = null;
-
             Console.WriteLine("       ESCOLHA A SUA CLASSE");
             Console.WriteLine("         (1 para Paladino)");
             Console.WriteLine("         (2 para Guerreiro)");
             Console.WriteLine("         (0 para Sair)");
             string escolhaclasse = Console.ReadLine()?.ToLower();
 
-            switch (escolhaclasse)
-            {
-                case "1":
-                    classe = new Paladino();
-                    break;
-                case "2":
-                    classe = new Guerreiro();
-                    break;
-                default:
-                    Console.WriteLine("Opção inválida. Saindo...");
-                    return;
-            }
+            var classesJson = File.ReadAllText("classes.json");
+            var classes = JsonSerializer.Deserialize<List<Personagem>>(classesJson);
 
-            if (classe == null)
+            if (classes is null)
+                throw new Exception("abel gayzao kkkkk");
+
+            Personagem? classe = escolhaclasse switch
             {
-                Console.WriteLine("Erro ao inicializar a classe do personagem.");
+                "1" => classes[0],
+                "2" => classes[1],
+                _ => null
+            };
+
+            if (classe is null)
+            {
+                Console.WriteLine("Opção inválida. Saindo...");
                 return;
             }
 
@@ -68,7 +64,7 @@ namespace testes
 
                 AdicionarTexto(content, font, 14, 40, 783, nomepersonagem);
                 AdicionarTexto(content, font, 12, 268, 780, jogador);
-                AdicionarTexto(content, font, 12, 330, 755, classe.classe);
+                AdicionarTexto(content, font, 12, 330, 755, classe.Nome);
 
                 // Adiciona os atributos do personagem ao PDF
                 string[] atributos = { "FORCA", "DESTREZA", "CONSTITUICAO", "INTELIGENCIA", "SABEDORIA", "CARISMA", "VIDA", "MANA", "DEFESA" };
@@ -86,6 +82,7 @@ namespace testes
             catch (Exception ex)
             {
                 Console.WriteLine($"Erro ao criar a ficha: {ex.Message}");
+                Console.WriteLine(ex.StackTrace);
             }
             finally
             {
