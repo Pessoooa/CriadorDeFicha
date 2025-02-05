@@ -5,10 +5,7 @@ public class ComponenteDeFicha
     public string Nome { get; set; }
     public Dictionary<string, int> Atributos { get; set; }
 
-    public int GetAtributo(string nome)
-    {
-        return Atributos.ContainsKey(nome) ? Atributos[nome] : 0;
-    }
+    public int GetAtributo(string nome) => Atributos.ContainsKey(nome) ? Atributos[nome] : 0;
 
     public void SetAtributo(string nome, int valor)
     {
