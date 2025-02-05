@@ -39,6 +39,9 @@ namespace testes
                 return;
             }
 
+            var ficha = new Ficha();
+            ficha.ComponentesDeFicha.Add(classe);
+
             // Criação do documento PDF
             Document document = new Document(PageSize.A4, 0, 0, 0, 0);
             try
@@ -71,9 +74,10 @@ namespace testes
                 int[] posicoesX = { 43, 100, 157, 214, 271, 328, 43, 214, 43 };
                 int[] posicoesY = { 691, 691, 691, 691, 691, 691, 635, 636, 410 };
 
-                for (int i = 0; i < atributos.Length; i++)
+                for (var i = 0; i < atributos.Length; i++)
                 {
-                    string valorAtributo = classe.GetAtributo(atributos[i]).ToString("D2") ?? "N/A";
+                    var atributo = atributos[i];
+                    var valorAtributo = ficha.Atributos.ContainsKey(atributo) ? ficha.Atributos[atributo].ToString("D2") : "N/A";
                     AdicionarTexto(content, font, 18, posicoesX[i], posicoesY[i], valorAtributo);
                 }
 
