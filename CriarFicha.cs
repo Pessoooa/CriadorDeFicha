@@ -24,7 +24,7 @@ namespace testes
             var classes = JsonSerializer.Deserialize<List<ComponenteDeFicha>>(classesJson);
 
             if (classes is null)
-                throw new Exception("abel gayzao kkkkk");
+                throw new Exception("lucas do buraco");
 
             ComponenteDeFicha? classe = escolhaclasse switch
             {
